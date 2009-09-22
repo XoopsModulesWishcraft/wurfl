@@ -25,14 +25,14 @@
  */
 
 $modversion = array();
-$modversion['name'] = _WRFL_MI_NAME;
-$modversion['version'] = 1.22;
-$modversion['description'] = _WRFL_MI_DESC;
+$modversion['name'] = _WURFL_MI_NAME;
+$modversion['version'] = 1.24;
+$modversion['description'] = _WURFL_MI_DESC;
 $modversion['author'] = "Simon Roberts (simon@chronolabs.org.au)";
 $modversion['credits'] = "To my Friend @ Xoops";
 $modversion['license'] = "SDLC (Software Directive Licence Commercial)";
 $modversion['image'] = "images/wurfl_slogo.png";
-$modversion['dirname'] = "vidshop";
+$modversion['dirname'] = "wurfl";
 $modversion['status'] = "stable";
 
 // Admin things
@@ -87,8 +87,8 @@ $modversion['config'][]=array(
 	'name' => 'provider',
 	'title' => '_WRFL_MI_PROVIDER',
 	'description' => '_WRFL_MI_PROVIDER_DESC',
-	'formtype' => 'multiselect',
-	'valuetype' => 'text',
+	'formtype' => 'select_multi',
+	'valuetype' => 'array',
 	'options' => array(	'ajax' => 'ajax',
 						'bearer' => 'bearer',
 						'bugs' => 'bugs',

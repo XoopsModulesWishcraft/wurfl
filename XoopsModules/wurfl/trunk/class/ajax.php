@@ -10,14 +10,20 @@ if (!defined('XOOPS_ROOT_PATH')) {
  * @copyright copyright (c) 2009-2003 XOOPS.org
  * @package kernel
  */
-class WurflCache extends XoopsObject
+class WurflAjax extends XoopsObject
 {
 
-    function WurflCache($id = null)
+    function WurflAjax($id = null)
     {
 		$this->initVar('did', XOBJ_DTYPE_INT, null, false);	
-		$this->initVar('time_to_live_support', XOBJ_DTYPE_INT, null, false);	
-		$this->initVar('total_cache_disable_support', XOBJ_DTYPE_INT, null, false);	
+		$this->initVar('ajax_xhr_type', XOBJ_DTYPE_TXTBOX, null, false, 32);
+		$this->initVar('ajax_support_getelementbyid', XOBJ_DTYPE_INT, null, false);
+		$this->initVar('ajax_support_event_listener', XOBJ_DTYPE_INT, null, false);
+		$this->initVar('ajax_manipulate_dom', XOBJ_DTYPE_INT, null, false);
+		$this->initVar('ajax_support_javascript', XOBJ_DTYPE_INT, null, false);
+		$this->initVar('ajax_support_inner_html', XOBJ_DTYPE_INT, null, false);
+		$this->initVar('ajax_manipulate_css', XOBJ_DTYPE_INT, null, false);
+		$this->initVar('ajax_support_events', XOBJ_DTYPE_INT, null, false);
     }
 }
 
@@ -30,12 +36,12 @@ class WurflCache extends XoopsObject
 * @author  Simon Roberts <simon@chronolabs.org.au>
 * @package kernel
 */
-class WurflCacheHandler extends XoopsPersistableObjectHandler
+class WurflAjaxHandler extends XoopsPersistableObjectHandler
 {
     function __construct(&$db) 
     {
 		$this->db = $db;
-        parent::__construct($db, "wurfl_devices_cache", 'WurflCache');
+        parent::__construct($db, "wurfl_devices_ajax", 'WurflAjax');
     }
 }
 
