@@ -1,0 +1,59 @@
+<h1><{$smarty.const._WURFL_AM_DEVICE_H1}></h1>
+<p><{$smarty.const._WURFL_AM_DEVICE_P}></p>
+<div style="clear:both; height:45px;">
+	<div style="float:right; height:45px;"><{$pagenav}></div>
+</div>
+
+<form action="<{$php_self}>" method='post'>
+<table>
+	<tr class="head">
+		<th><{$did_th}></th>
+		<th><{$id_th}></th>
+		<th><{$user_agent_th}></th>
+		<th><{$fallback_th}></th>
+		<th><{$manufacture_th}></th>
+		<th><{$model_th}></th>
+		<th><{$series_th}></th>
+		<th><{$smarty.const._WURFL_AM_TH_ACTIONS}></th>
+	</tr>
+	<tr class="filter">
+		<th><{$filter_did_th}></th>
+		<th><{$filter_id_th}></th>
+		<th><{$filter_user_agent_th}></th>
+		<th><{$filter_fallback_th}></th>
+		<th><{$filter_manufacture_th}></th>
+		<th><{$filter_model_th}></th>
+		<th><{$filter_series_th}></th>
+		<th>&nbsp;</th>
+	</tr>
+	<{foreach item=item from=$devices}>
+	<tr class="<{cycle values="even,odd"}>">
+		<td align='center'><{$item.did}><{$item.form.did}></td>
+		<td align='center'><{$item.form.id}></td>
+		<td align='center'><{$item.form.user_agent}></td>
+		<td align='center'><{$item.form.fallback}></td>
+		<td align='center'><{$item.form.manufacture}></td>
+		<td align='center'><{$item.form.model}></td>
+		<td align='center'><{$item.form.series}></td>
+		<td align='right'><a href="<{$php_self}>?op=devices&fct=edit&did=<{$item.did}>&start=<{$start}>&limit=<{$limit}>&order=<{$order}>&sort=<{$sort}>&filter=<{$filter}>"><{$smarty.const._EDIT}></a>&nbsp;|&nbsp;<a href="<{$php_self}>?op=devices&fct=delete&did=<{$item.did}>&start=<{$start}>&limit=<{$limit}>&order=<{$order}>&sort=<{$sort}>&filter=<{$filter}>"><{$smarty.const._DELETE}></a></td>
+	</tr>
+	<tr class="foot">
+		<td align='center'>&nbsp;</td>
+		<td align='center' colspan="7"><{foreach item=button from=$item.buttons}><{$button}>&nbsp;<{/foreach}></td>
+	</tr>
+	<{/foreach}>
+	<tr class="foot">
+		<td colspan="8"><input type='submit' name='submit' value='<{$smarty.const._SUBMIT}>'/></td>
+	</tr>
+</table>
+<input type='hidden' name='op' value='devices'/>
+<input type='hidden' name='fct' value='savelist'/>
+<input type='hidden' name='start' value='<{$start}>'/>
+<input type='hidden' name='limit' value='<{$limit}>'/>
+<input type='hidden' name='order' value='<{$order}>'/>
+<input type='hidden' name='sort' value='<{$sort}>'/>
+<input type='hidden' name='filter' value='<{$filter}>'/>
+</form>
+<h1><{$smarty.const._WURFL_AM_NEW_DEVICE_H1}></h1>
+<p><{$smarty.const._WURFL_AM_NEW_DEVICE_P}></p>
+<{$form}>
