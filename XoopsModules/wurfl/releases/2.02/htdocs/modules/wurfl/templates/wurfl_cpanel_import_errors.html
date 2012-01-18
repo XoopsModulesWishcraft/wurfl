@@ -1,0 +1,10 @@
+<h1><{$smarty.const._WURFL_AM_IMPORT_ERRORS_H1}></h1>
+<p><{$smarty.const._WURFL_AM_IMPORT_ERRORS_P}></p>
+<{if not $file_exists}>
+<p align="center" style="font-size:1.45em; color:rgb(255,0,0); margin-top:10px; height:20px;"><{$smarty.const._WURFL_AM_IMPORT_FILEDOESNTEXIST}></p>
+<p align="center" style="font-size:1.45em; color:rgb(155,50,180); margin-top:10px; height:20px;"><{$smarty.const._WURFL_AM_IMPORT_FILE}>:&nbsp;<em><{$file}></em></p>
+<{elseif not $xml_parser}>
+<p align="center" style="font-size:1.45em; color:rgb(255,0,0); margin-top:10px; height:20px;"><{$smarty.const._WURFL_AM_IMPORT_XMLPARSER_DOESNTEXIST}></p>
+<{else}>
+<p align="center" style="font-size:1.45em; color:rgb(255,0,0); margin-top:10px; height:20px;"><{$smarty.const._WURFL_AM_IMPORT_UNKNOWNERROR}></p>
+<{/if}>
