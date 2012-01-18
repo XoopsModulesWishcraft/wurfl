@@ -78,28 +78,28 @@ class WurflDevicesHandler extends XoopsPersistableObjectHandler
 			
 		foreach(explode('|', $GLOBALS['wurflModuleConfig']['pad_useragent_android']) as $ua) {
 			if (!empty($ua))
-				if (strpos(' '.strtolower(' '.$ua), strtolower($user_agent))>0||strpos(' '.strtolower($user_agent), strtolower(' '.$ua))>0) {
+				if (strpos(' '.strtolower(' '.$ua), strtolower($user_agent))>0||strpos(' '.strtolower($user_agent), strtolower($ua))>0) {
 					return $GLOBALS['wurflModuleConfig']['pad_android'];
 				}
 		}
 		
 		foreach(explode('|', $GLOBALS['wurflModuleConfig']['pad_useragent_apple']) as $ua) {
 			if (!empty($ua))
-				if (strpos(' '.strtolower(' '.$ua), strtolower($user_agent))>0||strpos(' '.strtolower($user_agent), strtolower(' '.$ua))>0) {
+				if (strpos(' '.strtolower(' '.$ua), strtolower($user_agent))>0||strpos(' '.strtolower($user_agent), strtolower($ua))>0) {
 					return $GLOBALS['wurflModuleConfig']['pad_apple'];
 				}
 		}
 		
 		foreach(explode('|', $GLOBALS['wurflModuleConfig']['mob_useragent_android']) as $ua) {
 			if (!empty($ua))
-				if (strpos(' '.strtolower(' '.$ua), strtolower($user_agent))>0||strpos(' '.strtolower($user_agent), strtolower(' '.$ua))>0) {
+				if (strpos(' '.strtolower(' '.$ua), strtolower($user_agent))>0||strpos(' '.strtolower($user_agent), strtolower($ua))>0) {
 					return $GLOBALS['wurflModuleConfig']['mob_android'];
 				}
 		}
 		
 		foreach(explode('|', $GLOBALS['wurflModuleConfig']['mob_useragent_apple']) as $ua) {
 			if (!empty($ua))
-				if (strpos(' '.strtolower(' '.$ua), strtolower($user_agent))>0||strpos(' '.strtolower($user_agent), strtolower(' '.$ua))>0) {
+				if (strpos(' '.strtolower(' '.$ua), strtolower($user_agent))>0||strpos(' '.strtolower($user_agent), strtolower($ua))>0) {
 					return $GLOBALS['wurflModuleConfig']['mob_apple'];
 				}
 		}
