@@ -1,6 +1,4 @@
 <?php
 
-	include dirname(__FILE__).'/header.php';
-	include dirname(__FILE__).'/processes.php';
-	
-?>
+include __DIR__ . '/header.php';
+include __DIR__ . '/processes.php';
