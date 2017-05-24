@@ -161,7 +161,7 @@ class WurflDevicesHandler extends XoopsPersistableObjectHandler
 
         $criteria = new Criteria('user_agent', $user_agent);
         if ($this->getCount($criteria)) {
-            $device =& $this->getObjects($criteria);
+            $device = $this->getObjects($criteria);
             if (is_array($device)) {
                 $device = $device[0];
             }
@@ -252,7 +252,7 @@ class WurflDevicesHandler extends XoopsPersistableObjectHandler
 
         $criteria = new Criteria('user_agent', $user_agent);
         if ($this->getCount($criteria)) {
-            $device =& $this->getObjects($criteria);
+            $device = $this->getObjects($criteria);
             if (is_array($device)) {
                 $device = $device[0];
             }
